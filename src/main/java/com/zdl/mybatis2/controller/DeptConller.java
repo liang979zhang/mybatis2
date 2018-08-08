@@ -27,8 +27,8 @@ public class DeptConller {
     }
 
     @GetMapping("/dept/sel")
-    public Department selDept(Integer integer) {
-        return departmentMapper.getById(integer);
+    public Department selDept(Integer id) {
+        return departmentMapper.getById(id);
     }
 
     @GetMapping("/dept/all")
