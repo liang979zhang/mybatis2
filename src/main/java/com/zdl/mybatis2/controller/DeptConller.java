@@ -6,12 +6,17 @@ import com.zdl.mybatis2.mapper.EmployeeMapper;
 import com.zdl.mybatis2.model.Department;
 import com.zdl.mybatis2.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Map;
 
-@RestController
+@Controller
+//@RequestMapping("th")
+//@RestController
 public class DeptConller {
 
     @Autowired
@@ -47,4 +52,19 @@ public class DeptConller {
         return employeeMapper.getAllemp();
 
     }
+
+
+    @RequestMapping("/success")
+    public String success(Map<String, Object> map) {
+//        map.addAttribute("hello", "aaaaaaaaaaaaaaa");
+        map.put("hello", "bbbbbbbbbbbbbbbbbbbb");
+        return "success";
+    }
+
+    @RequestMapping("")
+    public String index() {
+        return "success";
+    }
+
+
 }

@@ -32,6 +32,18 @@ spring:
        #打开PSCache，并指定每个连接上PSCache的大小。oracle设为true，mysql设为false。分库分表较多推荐设置为false
        pool-prepared-statements: false
        max-pool-prepared-statement-per-connection-size: 20
+
+#   静态文件配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: utf-8
+    servlet:
+      content-type: text/html
+    cache: false
+#  mvc:
+#    static-path-pattern: /static/**
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
@@ -43,6 +55,8 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+
+
 
 
 
